@@ -1,0 +1,17 @@
+{
+  "name": "gcl-global",
+  "version": "1.0.0",
+  "description": "GCL Global website - Static site",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "start": "echo 'Static site - deploy to Vercel'"
+  },
+  "keywords": [
+    "static",
+    "website",
+    "gcl-global"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+

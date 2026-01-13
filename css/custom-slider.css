@@ -1,0 +1,243 @@
+/* Custom Simple Slider - Reemplazo completo de Revolution Slider */
+
+.gcl-custom-slider-container {
+    position: relative;
+    width: 100%;
+    height: 742px;
+    overflow: hidden;
+    background: #000;
+}
+
+.gcl-custom-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gcl-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.gcl-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.gcl-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.gcl-slide-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.gcl-slide-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.gcl-slide-title {
+    font-size: 65px;
+    line-height: 80px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.gcl-slide-subtitle {
+    font-size: 65px;
+    line-height: 80px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.gcl-slide-btn {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 18px 25px;
+    background-color: rgb(247,147,30);
+    border: 2px solid rgb(247,147,30);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.gcl-slide-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.gcl-slide-btn i {
+    margin-left: 10px;
+}
+
+/* Controles de navegación - Flechas */
+.gcl-slider-arrows {
+    position: absolute;
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.gcl-slider-arrow {
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.gcl-slider-arrow:hover {
+    background: rgba(247,147,30,1);
+    border-color: rgba(247,147,30,1);
+}
+
+.gcl-slider-arrow i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Línea vertical entre flechas */
+.gcl-slider-arrow.gcl-arrow-up {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.gcl-slider-arrow.gcl-arrow-up::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 70px;
+    background: rgba(255,255,255,0.3);
+    bottom: -80px;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Índice (bullets) */
+.gcl-slider-bullets {
+    position: absolute;
+    left: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.gcl-slider-bullet {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.gcl-slider-bullet:hover,
+.gcl-slider-bullet.active {
+    background: rgba(247,147,30,1);
+    border-color: rgba(247,147,30,1);
+}
+
+.gcl-slider-bullet span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Línea vertical entre bullets */
+.gcl-slider-bullet::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 78px;
+    background: rgba(255,255,255,0.3);
+    bottom: -80px;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.gcl-slider-bullet:last-child::after {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gcl-slider-arrows {
+        right: 50px;
+    }
+    .gcl-slider-bullets {
+        left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gcl-slide-title,
+    .gcl-slide-subtitle {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    
+    .gcl-slider-arrows,
+    .gcl-slider-bullets {
+        display: none;
+    }
+}
+
+

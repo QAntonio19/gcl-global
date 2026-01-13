@@ -1,0 +1,186 @@
+/* Custom Slider Revolution Styles */
+
+/* Asegurar que el slider tenga posición relativa */
+.rev_slider_wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 742px !important;
+    overflow: hidden;
+    visibility: visible !important;
+}
+
+.rev_slider {
+    position: relative !important;
+    width: 100% !important;
+    height: 742px !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.rev_slider ul {
+    position: relative !important;
+    width: 100% !important;
+    height: 742px !important;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rev_slider ul li {
+    position: absolute !important;
+    width: 100% !important;
+    height: 742px !important;
+    top: 0;
+    left: 0;
+}
+
+/* Custom Arrows with vertical line */
+.tparrows.custom {
+    cursor: pointer;
+    background: transparent;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.tparrows.custom:hover {
+    background: rgba(247,147,30,1);
+    border-color: rgba(247,147,30,1);
+}
+
+.tparrows.custom:before {
+    font-family: "FontAwesome";
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    line-height: 66px;
+    text-align: center;
+}
+
+.tparrows.custom.tp-leftarrow:before {
+    content: "\f106";
+}
+
+.tparrows.custom.tp-rightarrow:before {
+    content: "\f107";
+}
+
+/* Vertical line between arrows */
+.tp-rightarrow.custom:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 70px;
+    background: rgba(255,255,255,0.3);
+    top: 80px;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Bullets/Index on the left */
+.tp-bullets {
+    z-index: 1000;
+}
+
+.tp-bullet {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.tp-bullet:hover,
+.tp-bullet.selected {
+    background: rgba(247,147,30,1);
+    border-color: rgba(247,147,30,1);
+}
+
+.tp-bullet-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tp-bullet.selected .tp-bullet-title {
+    color: #fff;
+}
+
+/* Vertical line between bullets */
+.tp-bullet:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 78px;
+    background: rgba(255,255,255,0.3);
+    top: 70px;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.tp-bullet:last-child:after {
+    display: none;
+}
+
+/* Revolution Slider Banner Timer */
+.tp-bannertimer {
+    display: none !important;
+}
+
+/* Fix for slider text visibility */
+.tp-caption {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure slider is visible */
+.rev_slider_wrapper {
+    visibility: visible !important;
+}
+
+.rev_slider {
+    visibility: visible !important;
+}
+
+/* Button styling for slider */
+.tp-caption.rev-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 18px 25px;
+    background-color: rgb(247,147,30);
+    border-color: rgb(247,147,30);
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-family: Roboto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tp-caption.rev-btn:hover {
+    background-color: #fff;
+    color: #000 !important;
+    border-color: #fff;
+}
+
+.tp-caption.rev-btn i {
+    margin-left: 10px;
+}
+
